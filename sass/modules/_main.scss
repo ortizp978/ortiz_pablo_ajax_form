@@ -1,4 +1,7 @@
 body {
+    margin: auto;
+    width: 500px;
+    display: flex;
     background-color: $main-bg-color;
     color: $main-color;
 
@@ -7,6 +10,9 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 
     h2 { 
@@ -14,15 +20,19 @@ main {
         color: $heading-color;
         font-size: 1.5em;
         margin-bottom: 0.8em;
+        text-align: center;
+        color: #FD7E72;
     }
 
     hr { 
         width: 80%; 
         border: 1px solid $heading-color; 
-        margin: 40px 0; 
+        margin: 40px 0;
+        text-align: justify;
     }
 
-    p { max-width: 75%; }
+    p { max-width: 75%;
+        text-align: justify;}
 }
 
 .error { border: 4px solid red; }
