@@ -9,6 +9,23 @@ label {
     }
 }
 
+.errorMessage {
+    text-align: center;
+    margin: 5px 0;
+    padding: 10px 0;
+    background-color: #f94838;
+    border-radius: 4px;
+}
+
+.success {
+    text-align: center;
+    font-weight: 700;
+    margin: 5px 0;
+    padding: 10px 0;
+    background-color: #0bb76c;
+    border-radius: 4px;
+}
+
 input[type=text], input[type=email], input[type=tel], textarea {
     padding: 0.6em;
     color: #333;

@@ -11,30 +11,33 @@
 <body>
     <main>
         <h1 class="hidden">Mail Reference for API Processing</h1>
-        <h2>Some Generic Contact Message Here</h2>
+        <h2>PABLO ORTIZ AJAX FORM<br>ASSIGNMENT</h2>
         <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quae aliquid eaque numquam facere ratione molestiae temporibus quibusdam, dolor voluptatibus cupiditate sed error expedita assumenda. Vitae nulla recusandae minima inventore?
+            Hello! Please send me a message and let's check together if this is working properly!
         </p>
 
         <hr class="separator">
 
-        <h2 class="mail-header">Processing Mail with AJAX</h2>
+        <h2 class="mail-header">Please fill in each space :)</h2>
 
-        <form action="includes/mail/send.php" method="POST" id="mail-form">
+        <form action="send.php" method="POST" id="mail-form">
             <label for="firstname">First Name</label>
-            <input ref="fname" type="text" id="firstname" name="firstname" required="required">
+            <input v-model="form.firstname" ref="fname" type="text" id="firstname" name="firstname" required="required">
+            <div class="errorMessage" v-if="errorFirstName">Please fill the spaces completely ;)</div>
 
             <label for="lastname">Last Name</label>
-            <input ref="lname" type="text" id="lastname" name="lastname" required>
+            <input v-model="form.lastname"ref="lname" type="text" id="lastname" name="lastname" required>
+            <div class="errorMessage" v-if="errorLastName">Please fill the spaces completely ;)</div>
 
             <label for="firstname">Email</label>
-            <input ref="email" type="email" id="email" name="email" required>
+            <input v-model="form.email"ref="email" type="email" id="email" name="email" required>
+            <div class="errorMessage" v-if="errorEmail">Please fill the spaces completely ;)</div>
 
             <label for="message">Your Message</label>
-            <textarea ref="message" name="message" id="message" cols="30" rows="10"></textarea>
-
-            <label for="phone">Your Phone # <i>(optional)</i></label>
-            <input ref="phone" type="tel" value="tel" name="phone">
+            <textarea v-model="form.text" ref="message" name="message" id="message" cols="30" rows="10"></textarea>
+            <div class="errorMessage" v-if="errorInMessage">Please fill the spaces completely ;)</div>
+            
+            <div class="success" v-if="successMessage">MESSAGE SENT! WELL DONE!</div>
             
             <div class="wrapper">
                 <input @click.prevent="processMail" type="submit" class="submit" value="Go!">

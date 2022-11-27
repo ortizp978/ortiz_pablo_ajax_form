@@ -1,5 +1,6 @@
 body {
     margin: auto;
+    margin-top: 20px;
     width: 500px;
     display: flex;
     background-color: $main-bg-color;
@@ -14,6 +15,9 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    border: 4px solid white;
+    border-radius: 20px;
+    background-color: #066273;
 
     h2 { 
         text-transform: uppercase;

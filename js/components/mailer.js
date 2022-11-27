@@ -9,7 +9,7 @@ async function SendMail(targetForm) {
 
     //let result = await fetch(`./includes/${targetForm.getAttribute("action")}`, {
 
-    let result = await fetch(`./${targetForm.getAttribute("action")}`, {
+    let result = await fetch(`./includes/${targetForm.getAttribute("action")}`, {
         method: targetForm.method,
         body: formData,
     }).then(response => {

@@ -6,22 +6,66 @@ import { SendMail } from "./components/mailer.js";
     createApp({
         data() {
             return {
-                message: 'Hello Vue!'
+                errorFirstName: false,
+                errorLastName: false,
+                errorEmail: false,
+                errorInMessage: false,
+                successMessage: false,
+
+                form: {
+                    firstname: "",
+                    lastname: "",
+                    email: "",
+                    text: ""
+                }
             }
         },
 
         methods: {
             processMailFailure(result) {
-                // show a failure message in the UI
-                // use this.$refs to connect to the elements on the page and mark any empty fields/inputs with an error class
-                alert('failure! and if you keep using an alert, DOUBLE failure!');        
-                // show some errors in the UI here to let the user know the mail attempt was successful
+                if(this.form.firstname.length > 0){
+                this.$refs.fname.classList.remove("error");
+                this.errorFirstName = false;
+                } else {
+                this.$refs.fname.classList.add("error");
+                this.errorFirstName = true;
+                }
+
+                if(this.form.lastname.length > 0){
+                this.$refs.lname.classList.remove("error");
+                this.errorLastName = false;
+                } else {
+                this.$refs.lname.classList.add("error");
+                this.errorLastName = true;
+                }    
+
+                if(this.form.email.length > 0){
+                this.$refs.email.classList.remove("error");
+                this.errorEmail = false;
+                } else {
+                this.$refs.email.classList.add("error");
+                this.errorEmail = true;
+                }
+
+                if(this.form.text.length > 0){
+                this.$refs.message.classList.remove("error");
+                this.errorInMessage = false;
+                } else {
+                this.$refs.message.classList.add("error");
+                this.errorInMessage = true;
+                }      
             },
 
             processMailSuccess(result) {
-                // show a success message in the UI
-                alert("success! but don't EVER use alerts. They are gross.");        
-                // show some UI here to let the user know the mail attempt was successful
+                this.successMessage = true;
+                this.$refs.fname.classList.remove("error");
+                this.$refs.lname.classList.remove("error");
+                this.$refs.email.classList.remove("error");
+                this.$refs.message.classList.remove("error");
+                this.errorFirstName = false;
+                this.errorLastName = false;
+                this.errorEmail = false;
+                this.errorInMessage = false;
             },
 
             processMail(event) {        
