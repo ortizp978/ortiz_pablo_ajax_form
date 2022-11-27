@@ -1,0 +1,42 @@
+body {
+    margin: auto;
+    margin-top: 20px;
+    width: 500px;
+    display: flex;
+    background-color: $main-bg-color;
+    color: $main-color;
+
+    font-size: $main-font-size;
+    font-family: $main-font-face;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 4px solid white;
+    border-radius: 20px;
+    background-color: #066273;
+
+    h2 { 
+        text-transform: uppercase;
+        color: $heading-color;
+        font-size: 1.5em;
+        margin-bottom: 0.8em;
+        text-align: center;
+        color: #FD7E72;
+    }
+
+    hr { 
+        width: 80%; 
+        border: 1px solid $heading-color; 
+        margin: 40px 0;
+        text-align: justify;
+    }
+
+    p { max-width: 75%;
+        text-align: justify;}
+}
+
+.error { border: 4px solid red; }
